@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>
+        Авторы
+    </h1>
+    
+    <div class="row mb-2">
+        {% for author in authors %}
+            </div>
+            <div class="grid-posts">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <img {% if author.photo %} src='{{ author.photo.url }}' {% endif %} alt="Article image">
+                                <div class="card-body">
+                                    <h3 class="post-title">
+                                        <a class="text-dark" href="{%  url 'author' author.id%}">{{ author.nickname }}</a>
+                                    </h3>
+                                    <a href="{%  url 'author' author.id %}">Continue reading</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+      </div>
+{% endblock %}

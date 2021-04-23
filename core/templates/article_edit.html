@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    a {
+        color: black;
+    }
+</style>
+    <form align="center" method="POST">
+        {% csrf_token %}
+        <div class="input-group mb-3 input-group-lg">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Заголовок статьи</span>
+            </div>
+            <input type="text" name="title" value="{{ article.title }}">
+        </div>
+        <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Текст<br>статьи</span>
+            </div>
+            <textarea class="form-control" rows='7' aria-label="С текстовым полем" name="text">{{ article.text }}</textarea>
+        </div>
+        <br>
+        <button class="btn btn-secondary btn-block">Добавить</button>
+    </form>
+    <div>
+        <button type="button" class="btn btn-primary"><a href="{% url 'article' article.pk %}">назад</a></button>
+    </div>
+{% endblock %}

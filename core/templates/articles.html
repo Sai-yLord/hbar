@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+    <hr>
+    <div class="row mb-2">
+        {% for article in article_filter.qs %}
+            </div>
+            <div class="grid-posts">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <img {% if article.img %} src='{{ article.img.url }}' {% endif %} alt="Article image">
+                                <div class="card-body">
+                                    <h3 class="post-title">
+                                        <a class="text-dark" href="{% url 'article' article.id %}">{{ article.title }}</a>
+                                    </h3>
+                                    <h5 class="post-title">{{ article.author.nickname }}</h5>
+                                    <p class="card-text">{{ article.text|linebreaks|truncatechars:50 xcder }}</p>
+                                    <a href="{% url 'article' article.id %}">Continue reading</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+      </div>
+{% endblock %}
+aas
+{% block right_panel %}
+   
+    <form method="get">
+        {% bootstrap_form article_filter.form %}
+        <input class='btn btn-info' type="submit" />
+    </form>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div>
+    <br>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="input-group mb-3 input-group-lg">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Заголовок статьи</span>
+            </div>
+            <input type="text" name="title" class="form-control" required>
+        </div>
+        <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Текст<br>статьи</span>
+            </div>
+            <textarea class="form-control" rows='7' aria-label="С текстовым полем" name="text" required></textarea>
+        </div>
+        <br>
+        <input type="file" name="img">
+        <br>
+        <br>
+        <button class="btn btn-secondary btn-block">Добавить</button>
+    </form>
+</div>
+
+
+{% endblock %}
