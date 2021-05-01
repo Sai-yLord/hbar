@@ -1,16 +1,11 @@
 from django.shortcuts import render, HttpResponse, redirect
-from django.urls import reverse
-
-from core.models import *
-from core.forms import ArticleForm
-from .filters import ArticleFilter
-
 from django.db.models import Q
-
 from django.contrib.auth import authenticate, login, logout, get_user_model
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test, permission_required
 
-from django.views.generic import TemplateView
+from core.models import Article, Author
+from core.forms import ArticleForm
+from core.filters import ArticleFilter
 
 User = get_user_model()
 
@@ -168,5 +163,3 @@ def sign_up(request):
                 return redirect('index')
         else:
             return render(request, 'sign_in.html')
-
-    

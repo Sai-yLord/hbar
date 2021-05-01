@@ -36,7 +36,7 @@ urlpatterns = [
     path("article/<int:pk>/edit/", article_edit, name='article_edit'),
     path("article_add/", article_add, name='article_add'),
     path("article/form/", article_form, name='article_form'),
-    path("article/<int:id>/delete/", delete_article, name='article-delete'),
+    path("article/<int:id>/delete/", DeleteArticleView.as_view(), name='article-delete'),
     path("top/", top, name='top'),
     path("search/", search, name="search" )
 
