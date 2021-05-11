@@ -40,7 +40,7 @@ class Article(models.Model):
         upload_to="media", 
         null=True, blank=True, 
         verbose_name="Картинки для статьи ")
-     
+
     
 
     def __str__(self):

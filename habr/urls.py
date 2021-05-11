@@ -13,8 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import url
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -38,7 +39,8 @@ urlpatterns = [
     path("article/form/", article_form, name='article_form'),
     path("article/<int:id>/delete/", DeleteArticleView.as_view(), name='article-delete'),
     path("top/", top, name='top'),
-    path("search/", search, name="search" )
+    path("search/", search, name="search"),
+    url('', include('social_django.urls', namespace='social'))
 
 ]   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

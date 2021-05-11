@@ -4,3 +4,5 @@ __pycache__/
 media
 static/
 habr/settings.py
+/venv
+/venv38
