@@ -2,6 +2,8 @@ Django==2.2.12
 django-bootstrap4==3.0.0
 django-filter==2.1.0
 factory-boy==2.11.1
+djangorestframework==3.12.4
 openpyxl==3.0.7
+social-auth-app-django==4.0.0
 Pillow==7.0.0
 psycopg2==2.8.6
