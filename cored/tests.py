@@ -12,8 +12,8 @@ class HomepageTestCase(TestCase):
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'Хабр')
-    
-    def test_homepage_with_articles_success(self):        
+
+    def test_homepage_with_articles_success(self):
         n = 3
         for i in range(n):
             article = ArticleFactory()

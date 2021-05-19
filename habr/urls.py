@@ -18,8 +18,10 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib.auth import views as auth_views
 
-from core.views import *
+from cored.views.class_bassed import *
+from cored.views.function_based import *
 
 
 var_gexsalge = "article/<int:id>/hide/"
@@ -40,7 +42,9 @@ urlpatterns = [
     path("article/<int:id>/delete/", DeleteArticleView.as_view(), name='article-delete'),
     path("top/", top, name='top'),
     path("search/", search, name="search"),
-    url('', include('social_django.urls', namespace='social'))
+    path("logout/", auth_views.LogoutView.as_view(), name="logout"),
+    path('', include('social_django.urls', namespace="social")),
+    path("/accounts/profile/", home, name="home"),
 
 ]   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

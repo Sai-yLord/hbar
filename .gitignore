@@ -3,6 +3,6 @@ __pycache__/
 *.рус
 media
 static/
-habr/settings.py
 /venv
 /venv38
+/venv/

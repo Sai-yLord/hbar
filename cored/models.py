@@ -3,7 +3,6 @@ from django.db import models
 
 from datetime import datetime
 
-
 from django.contrib.auth.models import User
 
 
@@ -37,11 +36,9 @@ class Article(models.Model):
     is_active = models.BooleanField(default=True)
 
     img = models.ImageField(
-        upload_to="media", 
-        null=True, blank=True, 
+        upload_to="media",
+        null=True, blank=True,
         verbose_name="Картинки для статьи ")
-
-    
 
     def __str__(self):
         return self.title
@@ -67,6 +64,7 @@ class Author(models.Model):
 
     def __str__(self):
         return self.nickname
+
 
 class ArticleImage(models.Model):
     img = models.ImageField(upload_to="articles_image")

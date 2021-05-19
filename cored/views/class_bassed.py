@@ -2,9 +2,8 @@ from django.shortcuts import HttpResponse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import TemplateView, ListView, DeleteView
 
-from core.models import Article
-from core.mixins import IsAuthorMixin
-
+from cored.models import Article
+from cored.mixins import IsAuthorMixin
 
 class TopView(LoginRequiredMixin, ListView):
     queryset = Article.objects.filter(is_active=True).order_by("-views", "pk")[:3]
@@ -16,7 +15,7 @@ class TestView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['test1'] = 'bla bla test' 
+        context['test1'] = 'bla bla test'
         return context
 
 

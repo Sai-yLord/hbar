@@ -3,9 +3,9 @@ from django.db.models import Q
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib.auth.decorators import login_required, user_passes_test, permission_required
 
-from core.models import Article, Author
-from core.forms import ArticleForm
-from core.filters import ArticleFilter
+from cored.models import Article, Author
+from cored.forms import ArticleForm
+from cored.filters import ArticleFilter
 
 User = get_user_model()
 
@@ -163,3 +163,7 @@ def sign_up(request):
                 return redirect('index')
         else:
             return render(request, 'sign_in.html')
+
+@login_required
+def home(request):
+    return render(request, 'home.html')

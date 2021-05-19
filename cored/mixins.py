@@ -8,4 +8,4 @@ class IsAuthorMixin(AccessMixin):
         article = Article.objects.get(pk=kwargs["id"])
         if user.author != article.author:
             return self.handle_no_permission()
-        return super().dispatch(request, *args, **kwargs) 
+        return super().dispatch(request, *args, **kwargs)
