@@ -1,7 +1,7 @@
 __pycache__/
 *.рус
 media
-static/
+# static/
 /venv
 /venv38
 /venv/

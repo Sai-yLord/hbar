@@ -1,0 +1,132 @@
+h2 {
+    color: black;
+}
+h2.g {
+    color: black;
+}
+
+h2::content{
+    color: black;
+}
+
+a.navbar-brand {
+    vertical-align: middle;
+    position: relative;
+    display: inline-flex
+}
+a {
+    color: black;
+}
+button {
+    color: brown;
+}
+
+li::content {
+    color: mistyrose;
+}
+
+a.navbar-brand {
+    font-weight: bolder
+}
+.slider{
+	margin-bottom: 50px;
+}
+
+.post-category,
+.link-more{
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 14px;
+	color: #b4ad9e;
+	text-transform: uppercase;
+	font-weight: 300;
+}
+.post-title a{
+	color: #626262;
+}
+
+a.nav-link_active{
+    color: blanchedalmond;
+}
+.grid-posts{
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+.grid-posts .card{
+	border: 0;
+	margin-bottom: 100px;
+}
+
+.grid-posts .card-body{
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.grid-posts .card-img-top{
+	max-height: 350px;
+	border-radius: 0;
+}
+.card-image-view__clickable {
+    z-index: 7;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-decoration: none;
+    pointer-events: auto;
+    cursor: pointer;
+}
+.feature-page__datetime {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-bottom: 3px solid #1E1E1E;
+    padding: 20px 0px;
+    color: #999999;
+    font-size: 13px;
+    margin-bottom: 30px;
+}
+strong.active {
+    color: white;
+    /* background-color: white; */
+}
+a.nav-link {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    height: 100%;
+    color: #909090;
+    font-weight: 500;
+    font-size: 14px;
+    font-family: "-apple-system",BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+    text-decoration: none;
+    white-space: nowrap;
+}
+a.navbar-brand .active {
+    color: #fff;
+}
+.page-header_110, .page-header_subscriptions {
+    display: flex;
+    align-items: center;
+    height: 90px;
+    font-family: "Fira Sans",sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    color: #5b666a;
+}
+
+.h-info li, .h-info p {
+    margin: 0 0 14px;
+    color: #111;
+    font-size: 14px;
+    line-height: 1.57;
+    margin: 0 0 22px;
+}
+
+.logo-wrapper .logo {
+    color: #fff;
+}
